@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine 💖</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #fff;
+      text-shadow: 2px 2px 4px #b03060;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #fff;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    button {
+      font-size: 1.2em;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background-color: #ff4081;
+      color: #fff;
+    }
+
+    #no {
+      background-color: #fff;
+      color: #ff4081;
+      position: relative;
+    }
+
+    #message {
+      margin-top: 30px;
+      font-size: 1.5em;
+      color: #fff;
+    }
+
+    img {
+      margin-top: 20px;
+      width: 300px;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Will You Be My Valentine? 💖</h1>
+  <p>I made something special just for you. Click below!</p>
+
+  <div class="buttons">
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script>
+    const noButton = document.getElementById('no');
+    const yesButton = document.getElementById('yes');
+    const message = document.getElementById('message');
+
+    // Move "No" button randomly on hover
+    noButton.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.position = 'absolute';
+      noButton.style.left = x + 'px';
+      noButton.style.top = y + 'px';
+    });
+
+    // Show message and GIF on "Yes" click
+    yesButton.addEventListener('click', () => {
+      message.innerHTML = `You chose the right decision! 💖<br>
+        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Love GIF">`;
+      yesButton.disabled = true;
+      noButton.disabled = true;
+    });
+  </script>
+</body>
+</html>
