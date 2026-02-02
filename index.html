@@ -1,104 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Be My Valentine 💖</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      text-align: center;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You, Vaithiesh 💖</title>
 
-    h1 {
-      font-size: 2.5em;
-      color: #fff;
-      text-shadow: 2px 2px 4px #b03060;
-    }
+<style>
+body {
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-    p {
-      font-size: 1.2em;
-      color: #fff;
-    }
+h1 {
+  color: white;
+  text-shadow: 2px 2px 4px #b03060;
+}
 
-    .buttons {
-      margin-top: 30px;
-    }
+.quote {
+  color: white;
+  font-size: 1.2em;
+  margin: 10px;
+}
 
-    button {
-      font-size: 1.2em;
-      padding: 15px 30px;
-      margin: 10px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+.buttons {
+  margin-top: 20px;
+}
 
-    #yes {
-      background-color: #ff4081;
-      color: #fff;
-    }
+button {
+  font-size: 1.2em;
+  padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 
-    #no {
-      background-color: #fff;
-      color: #ff4081;
-      position: relative;
-    }
+#yes {
+  background-color: #ff4081;
+  color: white;
+}
 
-    #message {
-      margin-top: 30px;
-      font-size: 1.5em;
-      color: #fff;
-    }
+#no {
+  background-color: white;
+  color: #ff4081;
+  position: relative;
+}
 
-    img {
-      margin-top: 20px;
-      width: 300px;
-      border-radius: 20px;
-    }
-  </style>
+#result {
+  margin-top: 20px;
+  color: white;
+  font-size: 1.3em;
+}
+
+img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 15px;
+}
+
+#photos {
+  display: none;
+}
+</style>
 </head>
+
 <body>
-  <h1>💖 Will You Be My Valentine? 💖</h1>
-  <p>I made something special just for you. Click below!</p>
 
-  <div class="buttons">
-    <button id="yes">Yes</button>
-    <button id="no">No</button>
-  </div>
+<h1>Hey Vaithiesh 💖</h1>
 
-  <div id="message"></div>
+<p class="quote">
+Two years of celebrating Valentine’s together…  
+and every year I fall for you even more 💑
+</p>
 
-  <script>
-    const noButton = document.getElementById('no');
-    const yesButton = document.getElementById('yes');
-    const message = document.getElementById('message');
+<p class="quote">
+“You are my today and all of my tomorrows.”  
+</p>
 
-    // Move "No" button randomly on hover
-    noButton.addEventListener('mouseover', () => {
-      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
-      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
-      noButton.style.position = 'absolute';
-      noButton.style.left = x + 'px';
-      noButton.style.top = y + 'px';
-    });
+<p class="quote">
+“Every love story is beautiful, but ours is my favorite.”  
+</p>
 
-    // Show message and GIF on "Yes" click
-    yesButton.addEventListener('click', () => {
-      message.innerHTML = `You chose the right decision! 💖<br>
-        <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Love GIF">`;
-      yesButton.disabled = true;
-      noButton.disabled = true;
-    });
-  </script>
+<h2>Will you be my Valentine again? 💌</h2>
+
+<div class="buttons">
+  <button id="yes">Yes 💖</button>
+  <button id="no">No</button>
+</div>
+
+<div id="result"></div>
+
+<div id="photos">
+  <h3>Our Beautiful Memories 💞</h3>
+
+  <!-- REPLACE THESE WITH YOUR REAL PHOTOS -->
+  <img src="PHOTO_URL_1">
+  <img src="PHOTO_URL_2">
+  <img src="PHOTO_URL_3">
+</div>
+
+<script>
+const noBtn = document.getElementById("no");
+const yesBtn = document.getElementById("yes");
+const result = document.getElementById("result");
+const photos = document.getElementById("photos");
+
+noBtn.addEventListener("mouseover", function() {
+  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+  noBtn.style.position = "absolute";
+  noBtn.style.left = x + "px";
+  noBtn.style.top = y + "px";
+});
+
+yesBtn.addEventListener("click", function() {
+  result.innerHTML = `
+  You chose the BEST decision, my love! 💖 <br><br>
+  I’m so lucky to have you in my life.  
+  Thank you for 2 amazing years together!  
+  Here’s to many more Valentines with you 💕
+  <br><br>
+  <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif">
+  `;
+
+  photos.style.display = "block";
+});
+</script>
+
 </body>
 </html>
