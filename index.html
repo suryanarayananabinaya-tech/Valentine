@@ -12,15 +12,11 @@
 body {
   font-family: 'Dancing Script', cursive;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   background: #ff0000; /* solid red base */
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   text-align: center;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
 }
 
@@ -69,13 +65,15 @@ button {
 }
 #photos {
   display: none;
-  margin-top: 20px;
+  margin: 20px auto;
+  text-align: center;
 }
 #photos img {
   width: 250px;
   margin: 10px;
   border-radius: 15px;
   animation: fadein 1s ease-in;
+  display: inline-block;
 }
 @keyframes fadein {
   from {opacity:0;}
@@ -109,6 +107,12 @@ button {
   50% {opacity:1;}
   100% {transform: translateY(-100px) rotate(45deg); opacity:0;}
 }
+
+/* GIF styling */
+#result img {
+  margin-top: 20px;
+  border-radius: 12px;
+}
 </style>
 </head>
 
@@ -131,14 +135,14 @@ button {
   <img src="images/IMG_2319.jpg" alt="Photo 3">
 </div>
 
-<!-- Spotify Music always visible at bottom -->
-<div style="position:fixed; bottom:10px; z-index:10;">
-<h3 style="color:white;">Our Song 🎶</h3>
-<iframe
-  style="border-radius:12px;"
-  src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator"
-  width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
-</iframe>
+<!-- Spotify Music below photos -->
+<div id="music" style="margin-top:20px;">
+  <h3 style="color:white;">Our Song 🎶</h3>
+  <iframe
+    style="border-radius:12px;"
+    src="https://open.spotify.com/embed/track/6lanRgr6wXibZr8KgzXxBl?utm_source=generator"
+    width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+  </iframe>
 </div>
 
 <script>
@@ -196,7 +200,7 @@ yesBtn.addEventListener("click", function(){
   `;
   photos.style.display="block";
 
-  // Confetti hearts
+  // Confetti hearts after YES
   for(let i=0;i<100;i++){
     let heart=document.createElement("div");
     heart.className="floating-heart";
